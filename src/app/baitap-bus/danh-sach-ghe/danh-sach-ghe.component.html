@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ng-container *ngFor="let item of mangGhe;let index = index">
+                <app-item-ghe [ghe]="item" (eventChoose)="choose($event)"></app-item-ghe>
+                <br *ngIf="(index +1) %4 === 0">
+            </ng-container>
+        </div>
+        <div class="col-md-6">
+            <h2>Danh sách ghế đã đặt ({{mangGheDangChon.length}})</h2>
+            <div *ngFor="let item of mangGheDangChon">
+                <p>Ghế : số {{item.SoGhe}}  ${{item.Gia}}</p> 
+                <button (click)="huyGhe(item.SoGhe)">[Hủy]</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div *ngIf="status">CyberSoft</div>
+<button class="btn btn-success" (click)="show()">Show</button>
+<button class="btn btn-danger" (click)="hidden()">Hidden</button>
+<button class="btn btn-info" (click)="toggle()">Hidden</button>
+<br>
+<br>
+<div *ngIf="!statusLogin; else NoiDungElse">
+    <button class="btn btn-info" (click)="dangXuat()">Đăng Xuất</button>
+    <h3>Xin Chào!!</h3>
+</div>
+
+<ng-template #NoiDungElse>
+    <div>
+        <button class="btn btn-success" (click)="dangNhap()">Đăng Nhập</button>
+        <h3>Chưa đăng nhập</h3>
+    </div>
+</ng-template>

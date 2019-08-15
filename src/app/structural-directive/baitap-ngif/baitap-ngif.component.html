@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item" data-toggle="modal" data-target="#myModal" *ngIf="!isLogin" >
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li *ngIf="isLogin" class="nav-item">
+                        <a class="nav-link" href="#">Xin chao</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="modal" tabindex="-1" role="dialog" id="myModal" *ngIf="isLogin">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Đăng nhập</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <p>Username</p>
+                    <input type="text" #username>
+                </form>
+                <form>
+                    <p>Password</p>
+                    <input type="text" #pass>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal" (click)="dangNhap(username.value,pass.value)">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
